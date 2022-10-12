@@ -16,7 +16,7 @@ def metersToFeet(meters):
 def displayTable():
     print(f"{'Feet' :<8}{'Meters' :<7} | {'Meters' :<8}{'Feet' :<7}")
     print()
-    
+
     for i in range(1, 11):
         print(f"{format(i, '0.1f') :<8}{format(feetToMeters(i), '0.3f') :<7} | " + 
         f"{format(15+i * 5, '0.1f') :<8}{format(metersToFeet(15+i * 5), '0.3f') :<7}")
@@ -36,7 +36,7 @@ def printTable():
     for i in range(10000, 100000 + 1, 5000):
         print(f"{i :<12}{format(computeCommission(i), '0.1f') :>16}")
 
-printTable()
+# printTable()
 
 # 6.12 Display characters
 
@@ -69,7 +69,7 @@ def printMatrix(n):
         else:
             print(randomDigit, end=" ")
 
-# printMatrix(3)
+printMatrix(3)
 
 
 
