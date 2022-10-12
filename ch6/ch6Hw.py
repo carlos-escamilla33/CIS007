@@ -1,4 +1,7 @@
 # Exercises 6.9, 6.11, 6.12, 6.18
+#Chapter 6 Exercises
+#Carlos Rodriguez Escamilla
+#10/11/2022
 
 # 6.9 Covert from feet to meters
 
@@ -10,22 +13,30 @@ def metersToFeet(meters):
     feet = meters / 0.305
     return feet
 
-def tableHeader():
+def displayTable():
     print(f"{'Feet' :<8}{'Meters' :<7} | {'Meters' :<8}{'Feet' :<7}")
     print()
-
-def displayTable():
+    
     for i in range(1, 11):
         print(f"{format(i, '0.1f') :<8}{format(feetToMeters(i), '0.3f') :<7} | " + 
         f"{format(15+i * 5, '0.1f') :<8}{format(metersToFeet(15+i * 5), '0.3f') :<7}")
 
-# tableHeader()
 # displayTable()
 
-# 6.11 
+# 6.11 Financial Application: compute commision
 
-# base salary = 5000
-# base salary + commission
+def computeCommission(salesAmt):
+    commission = (salesAmt - 10000) * 0.12 + 5000 * 0.10 + 5000 * 0.08
+    return commission
+
+def printTable():
+    print(f"{'Sales Amount' :<20}{'Commission' :<10}")
+    print()
+
+    for i in range(10000, 100000 + 1, 5000):
+        print(f"{i :<12}{format(computeCommission(i), '0.1f') :>16}")
+
+printTable()
 
 # 6.12 Display characters
 
