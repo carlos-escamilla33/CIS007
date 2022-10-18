@@ -38,19 +38,14 @@ print(f"Number of students passed: {studentsPassed} out of {numOfStudents}")
 # Above 30.0 Obese
 
 def getBMI(weight, height):
-    """
-        takes in weight and height as parameters and converts 
-        them into the users BMI
-    """
+    """ Return bmi based off weight and height"""
     bmi = round(weight * 703 / (height * height), 1)
     return bmi
 
 def getBmiInterpretation(bmi):
-    """
-        Determining if the person is overweight, obese, normal,
-        or underweight
-    """
+    """ Return bmi interpretation based off the user's bmi """
     bmiInterpretation = ""
+
     if bmi < 18.5:
         bmiInterpretation = "Underweight"
     elif bmi > 18.5 and bmi < 24.9:
