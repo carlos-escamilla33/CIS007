@@ -45,5 +45,15 @@ class Account:
     def deposit(self, amoount = 0):
         self.balance = self.balance + amoount
 
+account1 = Account(1122, 20000, 4.5)
+
+account1.withdraw(2500)
+account1.deposit(3000)
+
+print(account1.getId())
+print(account1.getBalance())
+print(account1.getAnnualInterest())
+print(account1.getMonthlyInterest())
+
     
 
