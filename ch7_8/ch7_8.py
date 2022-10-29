@@ -47,13 +47,53 @@ class Account:
 
 account1 = Account(1122, 20000, 4.5)
 
-account1.withdraw(2500)
-account1.deposit(3000)
+# account1.withdraw(2500)
+# account1.deposit(3000)
 
-print(account1.getId())
-print(account1.getBalance())
-print(account1.getAnnualInterest())
-print(account1.getMonthlyInterest())
+# print(account1.getId())
+# print(account1.getBalance())
+# print(account1.getAnnualInterest())
+# print(account1.getMonthlyInterest())
 
+# 7.5 Geometry: n sided regular polygon
+
+class RegularPolygon:
+    def __init__(self, n = 3, side = 1.0, x = 0.0, y = 0.0):
+        self.__n = n
+        self.__side = side
+        self.__x = x
+        self.__y = y
+
+    def getN(self):
+        return self.__n
+    
+    def getSide(self):
+        return self.__side
+    
+    def getX(self):
+        return self.__x
+    
+    def getY(self):
+        return self.__y
+    
+    def setN(self, n):
+        self.__n = n
+    
+    def setSide(self, sides):
+        self.__side = sides
+    
+    def setX(self, x):
+        self.__x = x
+    
+    def setY(self, y):
+        self.__y = y
+
+    def getPerimeter(self):
+        perimeter = self.getN() * self.getSide()
+        return perimeter
+
+    def getArea(self):
+        apothem = self.getSide()
+        area = (self.getN * self.getSide())
     
 
