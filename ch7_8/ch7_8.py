@@ -8,7 +8,6 @@
 # UML Diagram
 
 
-
 class Account:
     def __init__ (self, id = 0, balance = 100.0, annualInterestRate = 0.0):
         self.__id = id
@@ -93,7 +92,40 @@ class RegularPolygon:
         return perimeter
 
     def getArea(self):
-        apothem = self.getSide()
-        area = (self.getN * self.getSide())
+        import math
+        area = (self.getN() * math.pow(self.getSide(), 2)) / (4 * math.tan(math.pi / self.getN()))
+        return area
     
 
+# poly1 = RegularPolygon()
+# poly2 = RegularPolygon(6, 4)
+# poly3 = RegularPolygon(10, 4, 5.6, 7.8)
+
+# side = 5.6
+# n = 10
+
+# print(poly2.getPerimeter())
+
+# 8.4 Occurrences of a specified character
+
+def count(s, targetCh):
+    charCount = 0
+
+    for char in s:
+        if char.__eq__(targetCh):
+            charCount+=1
+
+    return charCount
+
+def main():
+    userInput = input("Enter any word:")
+    charToCount = input("Which character would you like to count the occurences of?:")
+
+    chrCountResult = count(userInput, charToCount)
+
+    if chrCountResult.__eq__(1):
+        print(f"The character '{charToCount}' shows up {chrCountResult} time in {userInput}")
+    else:
+         print(f"The character '{charToCount}' shows up {chrCountResult} times in {userInput}")
+
+# main()
