@@ -1,7 +1,7 @@
 # Exercises 7.3, 7.5, 8.4
 # Chapters 7 and 8 Exercises
 # Carlos Rodriguez Escamilla
-# 10/26/2022
+# 10/31/2022
 
 # 7.3 The Account class
 
@@ -24,35 +24,48 @@ class Account:
         return self.__annualInterestRate
     
     def setId(self, id = 0):
-        self.__id = id
+        if id >= 0:
+            self.__id = id
+        else:
+            print(f"Enter an id greater than {id}")
     
     def setBalance(self, balance = 0.0):
-        self.__balance = balance
+        if balance > 0.0:
+            self.__balance = balance
+        else:
+            print(f"Enter a balance greater than {balance}")
 
-    def setAnnualInterestRate(self, annualInterestRate):
-        self.__annualInterestRate = annualInterestRate
+    def setAnnualInterestRate(self, annualInterestRate = 0.0):
+        if annualInterestRate > 0.0:
+            self.__annualInterestRate = annualInterestRate
+        else:
+            print(f"Enter an annual interest rate greater than {annualInterestRate}")
 
     def getMonthlyInterestRate(self):
-        return round(self.__annualInterestRate / 12, 2) / 100
+        return (self.__annualInterestRate / 100) / 12
     
     def getMonthlyInterest(self):
-        return self.__balance * (self.getMonthlyInterestRate())
+        return round(self.__balance * self.getMonthlyInterestRate(), 2)
     
     def withdraw(self, amount = 0):
-        self.balance = self.__balance - amount
+        self.__balance = self.__balance - amount
     
     def deposit(self, amoount = 0):
-        self.balance = self.balance + amoount
+        self.__balance = self.__balance + amoount
 
 account1 = Account(1122, 20000, 4.5)
+account1.withdraw(2500)
+account1.deposit(3000)
 
-# account1.withdraw(2500)
-# account1.deposit(3000)
+accId = account1.getId()
+accBalance = account1.getBalance()
+accMonthlyInterestRate = account1.getMonthlyInterestRate()
+accMonthlyInterest = account1.getMonthlyInterest()
 
-# print(account1.getId())
-# print(account1.getBalance())
-# print(account1.getAnnualInterest())
-# print(account1.getMonthlyInterest())
+# print(f"The id is {accId}")
+# print(f"The balance of the account is ${'{:,}'.format(accBalance)}")
+# print(f"The monthly interst of the account is {accMonthlyInterestRate}%")
+# print(f"The annual interest of the account is ${accMonthlyInterest}")
 
 # 7.5 Geometry: n sided regular polygon
 
@@ -75,36 +88,47 @@ class RegularPolygon:
     def getY(self):
         return self.__y
     
-    def setN(self, n):
-        self.__n = n
+    def setN(self, n = 0):
+        if n > 2:
+         self.__n = n
+        else:
+            print(f"Enter an n greater than {n}")
     
-    def setSide(self, sides):
-        self.__side = sides
+    def setSide(self, side = 1.0):
+        if side > 0.0:
+            self.__side = side
+        else:
+            print(f"Enter a side greater than {side}")
     
-    def setX(self, x):
-        self.__x = x
+    def setX(self, x = 0.0):
+        if x >= 0.0:
+            self.__x = x
+        else:
+            print(f"Enter a value for x greater than {x}")
     
     def setY(self, y):
-        self.__y = y
+        if y >= 0.0:
+            self.__y = y
+        else:
+            print(f"Enter a value for x greater than {y}")
 
     def getPerimeter(self):
-        perimeter = self.getN() * self.getSide()
+        perimeter = self.__n * self.__side
         return perimeter
 
     def getArea(self):
         import math
-        area = (self.getN() * math.pow(self.getSide(), 2)) / (4 * math.tan(math.pi / self.getN()))
+        area = (self.__n * (math.pow(self.__side, 2))) / (4 * math.tan(math.pi / self.__n))
         return area
     
 
-# poly1 = RegularPolygon()
-# poly2 = RegularPolygon(6, 4)
-# poly3 = RegularPolygon(10, 4, 5.6, 7.8)
+poly1 = RegularPolygon()
+poly2 = RegularPolygon(6, 4)
+poly3 = RegularPolygon(10, 4, 5.6, 7.8)
 
-# side = 5.6
-# n = 10
-
-# print(poly2.getPerimeter())
+# print(f"Polygon1 has a perimeter of {poly1.getPerimeter()} and area is {format(poly1.getArea(), '.2f')}")
+# print(f"Polygon2 has a perimeter of {poly2.getPerimeter()} and area is {format(poly2.getArea(), '.2f')}")
+# print(f"Polygon3 has a perimeter of {poly3.getPerimeter()} and area is {format(poly3.getArea(), '.2f')}")
 
 # 8.4 Occurrences of a specified character
 
@@ -128,4 +152,4 @@ def main():
     else:
          print(f"The character '{charToCount}' shows up {chrCountResult} times in {userInput}")
 
-# main()
+main()
