@@ -6,7 +6,26 @@
 # 7.3 The Account class
 
 # UML Diagram
+"""
+    Account
 
+    -id: int
+    -balance: float
+    -annualInterestRate: float
+
+    Account(id: int, balance: float, annualInterestRate: float)
+    getId(): int
+    getBalance(): float
+    getAnnualInterest(): float
+    setId(id: int): None
+    setBalance(balance: float): None
+    setAnnualInterestRate(annualInterestRate: float): None
+    getMonthlyInterestRate(): float
+    getMonthlyInterest(): float
+    withdraw(amount: float): None
+    deposit(amount: float): None
+
+"""
 
 class Account:
     def __init__ (self, id = 0, balance = 100.0, annualInterestRate = 0.0):
@@ -69,6 +88,29 @@ accMonthlyInterest = account1.getMonthlyInterest()
 
 # 7.5 Geometry: n sided regular polygon
 
+# UML Diagram
+"""
+    RegularPolygon
+
+    -n: int
+    -side: float
+    -x: float
+    -y: float
+
+    RegularPolygon(n: int, side: float, x: float, y: float)
+    getN(): int
+    getSide(): float
+    getX(): float
+    getY(): float
+    setN(n: int): None
+    setSide(side: float): None
+    setX(x: float): None
+    setY(y: float): None
+    getPerimeter(): float
+    getArea(): float
+
+"""
+
 class RegularPolygon:
     def __init__(self, n = 3, side = 1.0, x = 0.0, y = 0.0):
         self.__n = n
@@ -106,7 +148,7 @@ class RegularPolygon:
         else:
             print(f"Enter a value for x greater than {x}")
     
-    def setY(self, y):
+    def setY(self, y = 0.0):
         if y >= 0.0:
             self.__y = y
         else:
