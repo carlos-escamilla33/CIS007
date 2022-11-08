@@ -30,6 +30,14 @@ def main():
 
 main()
 
+(base) carlosescamilla@Carloss-MacBook-Pro ch10_11 % python -u "/Users/carlosescamilla/Desktop/cis007/ch10_11/ch10_11.py"
+Enter scores:40 55 70 58
+Student 0 score is 40 and grade is C
+Student 1 score is 55 and grade is B
+Student 2 score is 70 and grade is A
+Student 3 score is 58 and grade is B
+
+
 
 # 10.8 Find the index of the smallest element
 
@@ -44,7 +52,7 @@ def indexOfSmallestElement(lst = []):
     else:
         return None
 
-def main2():
+def main():
     userInput = input("Enter a list of numbers: ")
     numsLst = [eval(num) for num in userInput.split()]
     lowestIdxResult = indexOfSmallestElement(numsLst)
@@ -54,7 +62,13 @@ def main2():
     else:
         print("Next time enter more than one number!")
 
-main2()
+main()
+
+(base) carlosescamilla@Carloss-MacBook-Pro ch10_11 % python -u "/Users/carlosescamilla/Desktop/cis007/ch10_11/ch10_11.py"
+Enter a list of numbers: 3 2 5 1
+Index 3 holds the lowest number in the list [3, 2, 5, 1]
+
+
 
 # 10.18 Eliminate Duplicates
 
@@ -67,7 +81,7 @@ def eliminateDuplicates(lst):
     
     return newList
 
-def main3():
+def main():
     numInput = input("Enter ten numbers: ")
     userList = [eval(num) for num in numInput.split()]
     nonDupList = eliminateDuplicates(userList)
@@ -76,4 +90,9 @@ def main3():
     for num in nonDupList:
         print(num, end=" ")
 
-main3()
+main()
+
+(base) carlosescamilla@Carloss-MacBook-Pro ch10_11 % python -u "/Users/carlosescamilla/Desktop/cis007/ch10_11/ch10_11.py"
+Enter ten numbers: 1 2 3 2 1 6 3 4 5 2
+The distinct numbers are: 1 2 3 6 4 5
+
