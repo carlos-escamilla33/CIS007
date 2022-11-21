@@ -5,7 +5,7 @@
 
 # 13.3 Process scores in a text file
 
-def main():
+def main1():
     userFile = input("Enter a filename: ")
     infile = open(userFile, "r")
     s = infile.read()
@@ -23,5 +23,7 @@ def main():
     print(f"The total is {total}")
     print(f"The average is {average}")
 
-main()
+# main1()
+
+
 
