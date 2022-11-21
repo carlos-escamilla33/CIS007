@@ -5,7 +5,7 @@
 
 # 13.3 Process scores in a text file
 
-def main1():
+def main():
     userFile = input("Enter a filename: ")
     infile = open(userFile, "r")
     s = infile.read()
@@ -23,7 +23,26 @@ def main1():
     print(f"The total is {total}")
     print(f"The average is {average}")
 
-# main1()
+main()
+
+# Exercise 13.5
+
+def main2():
+    userFile = input("Enter a filename: ")
+    oldStr = input("Enter the old string to be replaced: ")
+    newStr = input("Enter the new string to replace the old string: ")
+    infile = open(userFile, "r")
+    fileData = infile.read()
+    fileData = fileData.replace(oldStr, newStr)
+    infile.close()
+
+    infile = open(userFile, "w")
+    infile.write(fileData)
+    infile.close()
+
+    print("Done")
+
+# main2()
 
 
 
