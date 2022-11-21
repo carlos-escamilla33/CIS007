@@ -23,11 +23,19 @@ def main():
     print(f"The total is {total}")
     print(f"The average is {average}")
 
-# main()
+main()
+
+(base) carlosescamilla@Carloss-MacBook-Pro ch13 % python -u "/Users/carlosescamilla/Desktop/cis007/ch13/ch13Hw.py"
+Enter a filename: Scores.txt
+There are 24 scores
+The total is 800
+The average is 33.33
+
+
 
 # Exercise 13.5
 
-def main2():
+def main():
     userFile = input("Enter a filename: ")
     oldStr = input("Enter the old string to be replaced: ")
     newStr = input("Enter the new string to replace the old string: ")
@@ -42,7 +50,17 @@ def main2():
 
     print("Done")
 
-# main2()
+main()
+
+(base) carlosescamilla@Carloss-MacBook-Pro ch13 % python -u "/Users/carlosescamilla/Desktop/cis007/ch13/ch13Hw.py"
+Enter a filename: test.txt
+Enter the old string to be replaced: morning
+Enter the new string to replace the old string: afternoon
+Done
+
+
+
+# Exercise 13.11
 
 import math
 
@@ -148,3 +166,10 @@ def main():
 
 
 main()
+
+(base) carlosescamilla@Carloss-MacBook-Pro ch13 % python -u "/Users/carlosescamilla/Desktop/cis007/ch13/ch13Hw.py"
+Enter three triangle sides (comma separated): -3,2,2
+Enter triangle color: blue
+Enter 1 to fill triangle with color. 0 for unfilled: 1
+Cannot form a triangle if the sum of any two sides is less than the third
+
