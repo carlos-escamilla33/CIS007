@@ -4,13 +4,19 @@
 #12/05/2022
 
 # 14.8
+import re
 
 def main():
     userFile = input("Enter a filename: ")
     infile = open(userFile, "r")
     s = infile.read()
-    wordsArr = [word for word in s.split()]
-    nonDuplicateWords = set()
+    newS = re.sub(r"[^\w\s]", "", s)
+    wordsArr = [word.lower() for word in newS.split()]
+    nonDuplicateWords = sorted(set(wordsArr))
 
     infile.close()
+
+    for word in nonDuplicateWords:
+        print(word)
+
 main()
